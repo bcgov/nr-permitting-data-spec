@@ -1,0 +1,20 @@
+{
+  "id": "sample_id",
+  "application_id": "sample_application_id",
+  "source_system": "APTS",
+  "source_system_id": "sample_source_system_id",
+  "project_id": "sample_project_id",
+  "agency": "AF",
+  "business": "Archaeology",
+  "application_status": "Pending",
+  "permit_application_name": "Commercial General",
+  "permit_application_type": "New",
+  "received_date": "2020-01-01",
+  "accepted_date": "2020-01-01",
+  "tech_review_completion_date": "2020-01-01",
+  "rejected_date": "2020-01-01",
+  "adjudication_date": "2020-01-01",
+  "amendment_date": "2020-01-01",
+  "fn_consultn_start_date": "2020-01-01",
+  "fn_consultn_completion_date": "2020-01-01"
+}

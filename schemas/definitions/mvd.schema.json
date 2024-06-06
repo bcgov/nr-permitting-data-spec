@@ -1,0 +1,155 @@
+{
+  "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/mvd.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "permitting_mvd",
+  "description": "Standardisation of the attributes collected from all LOB source systems associated with the PMT",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique ID of the permit",
+      "format": "uuid"
+    },
+    "application_id": {
+      "type": "string",
+      "description": "Unique ID of the submitted application for a permit",
+      "format": "uuid"
+    },
+    "source_system": {
+      "type": "string",
+      "description": "Acronym for the source system providing the permit tracking",
+      "enum": [
+        "APTS",
+        "CATS",
+        "EPUPS; PPA",
+        "FTA",
+        "MOTI",
+        "RARN",
+        "RRS",
+        "TANTALIS",
+        "WILD",
+        "WMA"
+      ]
+    },
+    "source_system_id": {
+      "type": "string",
+      "description": "Unique ID of the permit in the source system",
+      "format": "uuid"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "ID of the project this permit relates to",
+      "format": "uuid"
+    },
+    "agency": {
+      "type": "string",
+      "description": "Acronym for the agency or ministry issuing the permit",
+      "enum": [
+        "AF",
+        "ENV",
+        "FOR",
+        "MOTI",
+        "WLRS",
+        "BCER"
+      ]
+    },
+    "business": {
+      "type": "string",
+      "description": "Business domain or area responsible for the permit",
+      "enum": [
+        "Archaeology",
+        "Contaminated Sites",
+        "Lands",
+        "Riparian",
+        "Transportation",
+        "Water"
+      ]
+    },
+    "application_status": {
+      "type": "string",
+      "description": "Status of the application to obtain a permit",
+      "enum": [
+        "Issued",
+        "Denied",
+        "Pending",
+        "In Review"
+      ]
+    },
+    "permit_application_name": {
+      "type": "string",
+      "description": "The business domain permit type",
+      "enum": [
+        "Commercial General",
+        "Nominal Rent Tenure",
+        "Residential",
+        "Roadways - Public",
+        "Utilities",
+        "New Groundwater Licence",
+        "Water Licence",
+        "Change Approval for Works in and About a Stream"
+      ]
+    },
+    "permit_application_type": {
+      "type": ["string", "null"],
+      "description": "The form type for a permit or licence application",
+      "enum": [
+        "New",
+        "Amendment",
+        "Cancel",
+        "Change Ownership"
+      ]
+    },
+    "received_date": {
+      "type": "string",
+      "description": "Date in which the application for permit was submitted",
+      "format": "date-time"
+    },
+    "accepted_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the review of the initial application's completeness concludes",
+      "format": "date-time"
+    },
+    "tech_review_completion_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the technical team concludes their review of the application",
+      "format": "date-time"
+    },
+    "rejected_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the permit is rejected",
+      "format": "date-time"
+    },
+    "adjudication_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the permit is adjudicated, approved or issued",
+      "format": "date-time"
+    },
+    "amendment_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the permit is amended",
+      "format": "date-time"
+    },
+    "fn_consultn_start_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the consultation with First Nations starts",
+      "format": "date-time"
+    },
+    "fn_consultn_completion_date": {
+      "type": ["string", "null"],
+      "description": "Date in which the consultation with First Nations ends",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "application_id",
+    "source_system",
+    "source_system_id",
+    "project_id",
+    "agency",
+    "business",
+    "application_status",
+    "permit_application_name",
+    "received_date"
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/definitions/data_discovery.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Data Discovery Schema",
+  "description": "Metadata collected during data discovery",
+  "type": "object",
+  "$defs": {
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the user"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email of the user"
+          }
+        },
+        "required": [
+          "name",
+          "email"
+        ]
+      }
+    },
+    "security_classification": {
+      "type": "string",
+      "enum": [
+        "Protected A",
+        "Protected B",
+        "Protected C"
+      ]
+    }
+  },
+  "properties": {
+    "source_system": {
+      "type": "string",
+      "description": "Acronym for the source system providing the data, as it is defined in IRS"
+    },
+    "agency": {
+      "type": "string",
+      "description": "Acronym for the agency or ministry that owns the dataset"
+    },
+    "business": {
+      "type": "string",
+      "description": "Business domain or area responsible for the data"
+    },
+    "data_custodian": {
+      "$ref": "#/$defs/users",
+      "description": "Data custodian(s) of the dataset"
+    },
+    "data_owner": {
+      "$ref": "#/$defs/users",
+      "description": "Data owner(s) of the dataset"
+    },
+    "data_specialist": {
+      "$ref": "#/$defs/users",
+      "description": "Data specialist(s) of the dataset"
+    },
+    "data_quality_metrics": {
+      "type": "object",
+      "description": "Quantified information pertaining to the quality of the data observed in the dataset.",
+      "properties": {
+        "accuracy": {
+          "type": "number",
+          "description": "Percentage of correct values in the dataset compared to the total number of values."
+        },
+        "completeness": {
+          "type": "number",
+          "description": "Percentage of missing values in the dataset."
+        },
+        "timeliness": {
+          "type": "integer",
+          "description": "Frequency at which data is updated or refreshed to reflect the most recent information, expressed in minutes."
+        },
+        "duplication": {
+          "type": "number",
+          "description": "Percentage of duplicated records in the dataset."
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the dataset"
+    },
+    "security_classification": {
+      "$ref": "#/$defs/security_classification",
+      "description": "Security classification of the dataset"
+    },
+    "technology": {
+      "type": "object",
+      "description": "Description of the underlying technology of the dataset",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the technology"
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the technology"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tags of the dataset, defined as key-value pairs",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ]
+      }
+    },
+    "categories": {
+      "type": "array",
+      "description": "Categories to define the dataset",
+      "items": {
+        "type": "string"
+      }
+    },
+    "storage_descriptor": {
+      "type": "array",
+      "description": "Relational data storage description at a table granularity",
+      "items": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string",
+            "description": "Name of the table as it is defined in the source database"
+          },
+          "schema_name": {
+            "type": "string",
+            "description": "Name of the schema as it is defined in the source database"
+          },
+          "columns": {
+            "type": "array",
+            "description": "Relational data storage description at a column granularity",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Column name"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Column data type"
+                },
+                "precision": {
+                  "type": "string",
+                  "description": "Precision of the column (optional)"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of the column"
+                },
+                "security_classification": {
+                  "$ref": "#/$defs/security_classification",
+                  "description": "Security classification of the column"
+                },
+                "nullable": {
+                  "type": "boolean",
+                  "description": "Flag to indicate if the column is nullable"
+                }
+              },
+              "required": [
+                "name",
+                "type",
+                "description",
+                "security_classification",
+                "nullable"
+              ]
+            }
+          }
+        },
+        "required": [
+          "schema_name",
+          "table_name",
+          "columns"
+        ]
+      }
+    },
+    "column_mapping": {
+      "type": "object",
+      "description": "Object mapping source system columns as defined in the storage_descriptor to those of the MVD. Each key should have the form 'schema_name.table_name.column'"
+    },
+    "extraction_query": {
+      "type": "string",
+      "description": "Extraction query used to retrieve target data from the source system"
+    },
+    "flowchart": {
+      "type": "object",
+      "description": "Graph representation of the flowchart",
+      "properties": {
+        "root": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Zero indexed root node of the flowchart"
+        },
+        "nodes": {
+          "type": "array",
+          "description": "Nodes of the flowchart",
+          "items": {
+            "type": "string",
+            "description": "Textual information to display inside each node"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "description": "Representation of each edge in the flowchart, including direction and textual information to display",
+          "items": {
+            "type": "object",
+            "description": "Representation of a single edge in the flowchart",
+            "properties": {
+              "origin_node": {
+                "type": "number",
+                "description": "Index of the origin node of the edge in the flowchart, zero-indexed"
+              },
+              "destination_node": {
+                "type": "number",
+                "description": "Index of the destination node of the edge in the flowchart, zero-indexed"
+              },
+              "text": {
+                "type": "string",
+                "description": "Textual information to display on the edge of the flowchart"
+              }
+            },
+            "required": [
+              "origin_node",
+              "destination_node",
+              "text"
+            ]
+          }
+        }
+      },
+      "required": [
+        "root",
+        "nodes",
+        "edges"
+      ]
+    }
+  },
+  "required": [
+    "source_system",
+    "agency",
+    "business",
+    "data_custodian",
+    "technology",
+    "description",
+    "security_classification",
+    "storage_descriptor",
+    "data_quality_metrics",
+    "column_mapping",
+    "extraction_query"
+  ]
+}
