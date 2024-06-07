@@ -1,0 +1,18 @@
+{
+  "name": "typescript_interfaces",
+  "version": "1.0.0",
+  "description": "TypeScript Interface autogeneration package",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "main": "npx ts-node main.ts"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "json-schema-to-typescript": "^13.1.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7"
+  }
+}

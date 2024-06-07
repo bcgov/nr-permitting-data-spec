@@ -1,0 +1,116 @@
+name: Autogeneration
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review, converted_to_draft]
+
+jobs:
+  get-discovery-schemas:
+    name: Get Discovery Schemas
+    runs-on: ubuntu-latest
+    outputs:
+      schemas: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout and Cache
+        uses: actions/checkout@v4
+      - id: cache
+        uses: actions/cache/save@v4
+        with:
+          path: .
+          key: ${{ github.workflow }}-${{ github.repository.event.number }}-clone-${{ hashFiles('**/lockfiles') }}
+
+      - name: Set Matrix
+        id: set-matrix
+        run: echo "matrix=$(ls schemas/discovery/*.json | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+
+  validation:
+    name: Validate Discovery Schemas
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    needs: get-discovery-schemas
+    if: ${{ needs.get-discovery-schemas.outputs.schemas != '[]' }}
+    strategy:
+      matrix:
+        schemas: ${{ fromJson(needs.get-discovery-schemas.outputs.schemas) }}
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: .
+          key: ${{ github.workflow }}-${{ github.repository.event.number }}-clone
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          cache: 'pip'
+          python-version: '3.12'
+
+      - name: Install Packages
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: "1"
+          PIP_DEFAULT_TIMEOUT: "100"
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONUNBUFFERED: "1"
+        run: pip install -r tools/schemas/validation/requirements.txt
+
+      - name: Validate Discovery Schemas
+        run: python3 tools/schemas/validation/main.py ${{ matrix.schemas }} schemas/definitions/discovery.schema.json
+
+  generate-docs:
+    name: Generate Docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    needs: [ validation, get-discovery-schemas ]
+    if: ${{ needs.get-discovery-schemas.outputs.schemas != '[]' }}
+    strategy:
+      matrix:
+        schemas: ${{ fromJson(needs.get-discovery-schemas.outputs.schemas) }}
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: .
+          key: ${{ github.workflow }}-${{ github.repository.event.number }}-clone
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          cache: 'pip'
+          python-version: '3.12'
+
+      - name: Install Packages
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: "1"
+          PIP_DEFAULT_TIMEOUT: "100"
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONUNBUFFERED: "1"
+        run: pip install -r tools/autogen/docs/requirements.txt
+
+      - name: Generate Docs
+        run: |
+          output_path=$(echo "${{ matrix.schemas }}" | sed 's|.*/\(.*\)\.schema\.json|docs/schemas/\1.md|')
+          python3 tools/autogen/docs/main.py ${{ matrix.schemas }} $output_path
+
+  generate-dataclasses:
+    name: Generate Python DataClasses
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    needs: [ validation, get-discovery-schemas ]
+    if: ${{ needs.get-discovery-schemas.outputs.schemas != '[]' }}
+    strategy:
+      matrix:
+        schemas: ${{ fromJson(needs.get-discovery-schemas.outputs.schemas) }}
+    steps:
+      - uses: actions/cache/restore@v4
+        with:
+          path: .
+          key: ${{ github.workflow }}-${{ github.repository.event.number }}-clone
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          cache: 'pip'
+          python-version: '3.12'
+
+      - name: Generate Python DataClasses
+        run: |
+          output_path=$(echo "${{ matrix.schemas }}" | sed 's|.*/\(.*\)\.schema\.json|types/python/schemas/\1.py|')
+          ./main.sh python3 ${{ matrix.schemas }} $output_path

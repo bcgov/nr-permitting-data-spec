@@ -1,0 +1,15 @@
+{
+  "title": "A Thing",
+  "description": "JSON Schema for a thing.",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Description of the thing"
+    },
+    "version": {
+      "type": "integer",
+      "description": "Version of the thing"
+    }
+  }
+}
