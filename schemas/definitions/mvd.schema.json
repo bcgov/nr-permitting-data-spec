@@ -55,7 +55,7 @@
     },
     "business": {
       "type": "string",
-      "description": "Business domain or area responsible for the permit",
+      "description": "Business domain, office or area responsible for the permit",
       "enum": [
         "Archaeology",
         "Contaminated Sites",
