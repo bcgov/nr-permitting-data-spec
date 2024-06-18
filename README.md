@@ -3,12 +3,6 @@
 
 [![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](<Redirect-URL>)
 
-
-
-
----
-title: Sample Readme File
-description: This is a great starting point for your main README.md file for your new project
 ---
 ## NR Permitting Data Specifications Repository
 ---
