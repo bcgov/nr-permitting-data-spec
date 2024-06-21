@@ -6,9 +6,7 @@
 ---
 ## NR Permitting Data Specifications Repository
 ---
-This repository contains the common schemas related to permitting in the Natural Resources and includes other artifacts developed for permitting modernization initiative.
-
-## Getting Help or Reporting an Issue
+This repository contains common schemas related to permitting in the Natural Resources and includes other artifacts developed for permitting modernization initiative. Leveraging common schemas will enable consistenacy, cross sector governance, identify patterns and opportunities and allow reporting and analytics to feed into decision making.
 
 ## How to Contribute
 
