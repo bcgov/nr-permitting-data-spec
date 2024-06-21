@@ -6,9 +6,12 @@
 ---
 ## NR Permitting Data Specifications Repository
 ---
-This repository contains data models and other artifacts developed for permitting modernization initiative
+This repository contains the common schemas related to permitting in the Natural Resources and includes other artifacts developed for permitting modernization initiative.
 
 ## Features
+* Common permitting data specification
+* Extended permiting related schemas, e.g., housing
+* Validation and autogeneration of schema documents
 
 ## Usage
 
@@ -20,12 +23,22 @@ This repository contains data models and other artifacts developed for permittin
 
 ## Goals/Roadmap
 
+The common specifications are to 
+* enable a consistent cross sector data governance, including the consistent collection of data and metadata
+* develops patterns, guidance and opportunities on data quality, data visualization, information gaps
+* leverage a common integrated permitting data schema in an environment for reporting and analytics
+* feed intelligence to the sector, moving towards harmonized statuses, activity-based permit bundling and application process tracking
+
 ## Getting Help or Reporting an Issue
 
 ## How to Contribute
 
 *If you are including a Code of Conduct, make sure that you have a [CODE_OF_CONDUCT.md](SAMPLE-CODE_OF_CONDUCT.md) file, and include the following text in here in the README:*
 "Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms."
+
+# Issues/Suggestions
+
+Make suggestions or recommendations by creating issues [here](https://github.com/bcgov/nr-permitting-data-spec/issues/new)! Issues are [markdown](https://guides.github.com/features/mastering-markdown/) supported.
 
 ## License
 
