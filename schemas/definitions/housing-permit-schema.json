@@ -16,7 +16,7 @@
         "Apartments",
         "Condominiums",
         "Other"
-      ],},
+      ]},
       "housing_dwelling_type_code": {
         "type": "string",
         "description": "The code for the type of dwelling units being developed, e.g, SFD, MFD, SU, O.",
