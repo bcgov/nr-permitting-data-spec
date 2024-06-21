@@ -64,7 +64,6 @@
         ]},
     },
   
-  },
   "required": [
     "housing_dwelling_type",
     "housing_dwelling_capacity",
