@@ -10,7 +10,7 @@ This repository contains common schemas related to permitting in the Natural Res
 
 ## How to Contribute
 
-Review the [contributing guidelines](CONTRIBUTING.md) and the [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Review the [Contributing Guidelines](CONTRIBUTING.md) and the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 Copyright 2019 Province of British Columbia
 
