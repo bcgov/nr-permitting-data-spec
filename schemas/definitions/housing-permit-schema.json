@@ -24,7 +24,7 @@
           "SFD",
           "MFD", 
           "SU"
-        ]},
+          ]},
       "housing_dwelling_ranges": {
           "type": "string",
           "description": "The number of dwelling or units defined in ranges.",
