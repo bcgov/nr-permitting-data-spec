@@ -1,6 +1,6 @@
-# Data Discovery Schema
+# Metadata Discovery Schema
 
-*Metadata collected during data discovery*
+*This data specitification provides a standard list of metadata values for data collected from different source systems.*
 
 ## Properties
 

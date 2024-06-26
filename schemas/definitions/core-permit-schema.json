@@ -2,7 +2,7 @@
   "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/mvd.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Core Permitting Schema",
-  "description": "Standardisation of the attributes collected from all permitting systems.",
+  "description": "This data specification provides a standard list of values for Natural Resource Sector core permitting data.",
   "type": "object",
   "properties": {
     "id": {

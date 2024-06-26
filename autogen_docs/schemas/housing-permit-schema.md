@@ -1,6 +1,6 @@
-# housing-permit-schema
+# Housing Permitting Schema
 
-*Standardisation of the supplementary housing permit schema.*
+*This data specification provides a standard list of values for Natural Resource Sector permitting data realted to housing attributes to supplement the core permit schema.*
 
 ## Properties
 
