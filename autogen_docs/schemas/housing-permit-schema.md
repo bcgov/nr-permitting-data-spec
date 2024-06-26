@@ -1,6 +1,6 @@
-# Housing Permit Schema
+# Housing Permitting Schema
 
-*This reference data provides a standard set of housing attributes to supplement the core permit schema.*
+*This data specification provides a standard list of values for Natural Resource Sector permitting data realted to housing attributes to supplement the core permit schema.*
 
 ## Properties
 

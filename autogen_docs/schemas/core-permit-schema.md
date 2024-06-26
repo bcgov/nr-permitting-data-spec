@@ -1,6 +1,6 @@
 # Core Permitting Schema
 
-*This reference data provides a standard set of attributes to be collected from all permitting systems both within and external to the natural resources ministries.*
+*This data specification provides a standard list of values for Natural Resource Sector core permitting data.*
 
 ## Properties
 
