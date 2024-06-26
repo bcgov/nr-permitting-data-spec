@@ -1,6 +1,6 @@
-# permitting_mvd
+# Core Permitting Schema
 
-*Standardisation of the attributes collected from all LOB source systems associated with the PMT*
+*This reference data provides a standard set of attributes to be collected from all permitting systems both within and external to the natural resources ministries.*
 
 ## Properties
 
@@ -10,7 +10,7 @@
 - **`source_system_id`** *(string, format: uuid)*: Unique ID of the permit in the source system.
 - **`project_id`** *(string, format: uuid)*: ID of the project this permit relates to.
 - **`agency`** *(string)*: Acronym for the agency or ministry issuing the permit. Must be one of: `["AF", "ENV", "FOR", "MOTI", "WLRS", "BCER"]`.
-- **`business`** *(string)*: Business domain or area responsible for the permit. Must be one of: `["Archaeology", "Contaminated Sites", "Lands", "Riparian", "Transportation", "Water"]`.
+- **`business`** *(string)*: Business domain, office or area responsible for the permit. Must be one of: `["Archaeology", "Contaminated Sites", "Lands", "Riparian", "Transportation", "Water"]`.
 - **`application_status`** *(string)*: Status of the application to obtain a permit. Must be one of: `["Issued", "Denied", "Pending", "In Review"]`.
 - **`permit_application_name`** *(string)*: The business domain permit type. Must be one of: `["Commercial General", "Nominal Rent Tenure", "Residential", "Roadways - Public", "Utilities", "New Groundwater Licence", "Water Licence", "Change Approval for Works in and About a Stream"]`.
 - **`permit_application_type`** *(['string', 'null'])*: The form type for a permit or licence application. Must be one of: `["New", "Amendment", "Cancel", "Change Ownership"]`.

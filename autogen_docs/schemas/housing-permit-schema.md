@@ -1,6 +1,6 @@
-# housing-permit-schema
+# Housing Permit Schema
 
-*Standardisation of the supplementary housing permit schema.*
+*This reference data provides a standard set of housing attributes to supplement the core permit schema.*
 
 ## Properties
 
