@@ -1,7 +1,7 @@
 {
   "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/definitions/data_discovery.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Data Discovery Schema",
+  "title": "Metadata Data Discovery Schema",
   "description": "Metadata collected during data discovery",
   "type": "object",
   "$defs": {
