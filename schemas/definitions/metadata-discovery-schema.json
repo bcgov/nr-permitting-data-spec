@@ -2,7 +2,7 @@
   "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/definitions/data_discovery.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Metadata Discovery Schema",
-  "description": "This reference data provides a standard list of metadata values for data collected from different source systems.",
+  "description": "This data specitification provides a standard list of metadata values for data collected from different source systems.",
   "type": "object",
   "$defs": {
     "users": {

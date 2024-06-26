@@ -1,8 +1,8 @@
 {
   "$id": "https://github.com/bcgov/nr-permitting-data-spec/tree/main",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Housing Permit Schema",
-  "description": "This reference data provides a standard set of housing attributes to supplement the core permit schema.",
+  "title": "Housing Permiting Schema",
+  "description": "This data specification provides a standard list of values for Natural Resource Sector permitting data realted to housing attributes to supplement the core permit schema.",
   "type": "object",
   "properties": {
     "housing_dwelling_type": {
