@@ -5,7 +5,7 @@
   "description": "This data specification enables the creation of a standard list of permit names for the Natural Resource Sector permitting systems.",
   "type": "object",
   "properties": {
-    "permit-name-id": {
+    "permit-name-registry-id": {
       "type": "string",
       "description": "A unique key of registered permit names.",
       "format": "uuid"
