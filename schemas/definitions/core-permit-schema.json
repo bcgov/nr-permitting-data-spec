@@ -40,7 +40,16 @@
     },
     "region_name": {
       "type": "string",
-      "description": "Geographic administrative boundary associated with the physical project location."
+      "description": "Natural Resource administrative boundary associated with the physical project location.",
+      "enum": [
+        "Cariboo",
+        "Kootenay-Boundary",
+        "Northeast",
+        "Omineca",
+        "Skeena",
+        "South Coast",
+        "Thompson-Okanagan"
+      ]
     },
     "agency": {
       "type": "string",
@@ -50,6 +59,7 @@
         "ENV",
         "EMLI",
         "FOR",
+        "MIRR",
         "MOTI",
         "WLRS",
         "BCER"
@@ -138,14 +148,29 @@
       "type": "string",
       "description": "The business domain permit name type",
       "enum": [
+        "Change approval for work in and about a stream",
         "Commercial General",
-        "Nominal Rent Tenure",
-        "Residential",
-        "Roadways - Public",
-        "Utilities",
+        "Contaminated Sites Remediation",
         "Groundwater Licence",
-        "Water Licence",
-        "Change Approval for Works in and about a Stream"
+        "Heritage Inspection Permit",
+        "Highway Use Permit",
+        "Investigation Permit",
+        "Municipal subdivision",
+        "Nominal Rent Tenure",
+        "Notification of authorized changes in and about a stream",
+        "Occupant Licence to Cut",
+        "Other",
+        "Private Timber Mark",
+        "Residential",
+        "Rezoning",
+        "Riparian Area Development Permit",
+        "Roadways - Public",
+        "Rural subdivision",
+        "Short-term use approval",
+        "Site Alteration Permit",
+        "Sponsored Crown Grant",
+        "Surface Water Licence",
+        "Utilities"
       ]
     },
     "permit_application_type": {
