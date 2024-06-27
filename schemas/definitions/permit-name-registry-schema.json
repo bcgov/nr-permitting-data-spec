@@ -1,0 +1,34 @@
+{
+  "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/mvd.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Permit Name Registry Schema",
+  "description": "This data specification enables the creation of a standard list of permit names for the Natural Resource Sector permitting systems.",
+  "type": "object",
+  "properties": {
+    "permit-name-id": {
+      "type": "string",
+      "description": "A unique key of registered permit names.",
+      "format": "uuid"
+    },
+    "source_system_acronym": {
+      "type": "string",
+      "description": "Acronym for the source system providing the permit tracking.",
+    },
+    "permit_name": {
+      "type": "string",
+      "description": "The business domain permit name type"
+    },
+    "permit_application_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The form type for a permit or licence application"
+    }
+  },
+  "required": [
+    "permit-name-id",
+    "source_system_acronym",
+    "permit_name"
+  ]
+}
