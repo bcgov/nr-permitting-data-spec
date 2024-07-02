@@ -2,8 +2,8 @@
 layout: team
 name: TEAM
 
-title: Meet the Common Service Showcase Team
-description: Founded in 2019, we are a cross-functional agile team, building on the work done by former and external contributors. Our team focuses on inspiring innovation for our customers with convenient and reliable Common Services.​<br /><br />We aim to help other development teams incorporate Common Services into their applications or take advantage of our hosted services. Using Common Services saves time, money and reduces software duplication.
+title: Meet the NR Permitting Team
+description: Founded in 2023, we are a cross-functional agile team, building on the work done by former and external contributors. Our team focuses on modernizing existing permitting practices with the ultimate goal of being able to effectively track permitting times for various processes within the province.​<br /><br />.
 
 ---
 
