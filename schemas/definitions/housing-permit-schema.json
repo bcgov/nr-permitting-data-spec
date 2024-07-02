@@ -20,16 +20,31 @@
       ]
     },
     "housing_dwelling_type_code": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "label": "Housing dwelling type code",
       "description": "The code for the type of dwelling units being developed, e.g, SFD, MFD, SU, O.",
-      "enum": ["SFD", "MFD", "SU"]
+      "enum": [
+        "SFD",
+        "MFD",
+        "SU"
+      ]
     },
     "housing_dwelling_capacity_ranges": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "label": "Housing dwelling capacity ranges",
       "description": "The number of dwelling or units defined in ranges.",
-      "enum": ["1-9", "10-49", "50-500", ">500"]
+      "enum": [
+        "1-9",
+        "10-49",
+        "50-500",
+        ">500"
+      ]
     },
     "housing_dwelling_capacity": {
       "type": "integer",
@@ -40,19 +55,31 @@
       "type": "string",
       "label": "Purpose built rental indicator",
       "description": "Indicating whether the application corresponds to a  purpose built residential unit, property, or dwelling that is available for long term rent by tenants, i.e., Y, N, U.",
-      "enum": ["Y", "N", "U"]
+      "enum": [
+        "Y",
+        "N",
+        "U"
+      ]
     },
     "indigenous_led_ind": {
       "type": "string",
       "label": "Indigenous led indicator",
       "description": "A value indicating whether the application is led by Indigenous groups, i.e., Y, N, U.",
-      "enum": ["Y", "N", "U"]
+      "enum": [
+        "Y",
+        "N",
+        "U"
+      ]
     },
     "social_housing_ind": {
       "type": "string",
       "label": "Social housing indicator",
       "description": "A value indicating whether the application's purpose pertains to Social Housing, i.e., Y, N, U.",
-      "enum": ["Y", "N", "U"]
+      "enum": [
+        "Y",
+        "N",
+        "U"
+      ]
     }
   },
   "required": [
