@@ -1,0 +1,71 @@
+# Common Services Postman Collection
+
+We maintain a Postman Collection for our API's.
+
+This guide assumes you have gone through the Common Services [onboarding process](/common-service-showcase/#Onboarding) and have credentials for at least one environment.  You will need the service client id and password.
+
+### Services
+Please review the API documents before proceeding. The more familiar you are with the API calls, the more useful you will find the examples in this collection.
+
+| Service | Links |
+| --- | --- |
+| CHES | [github](https://github.com/bcgov/common-hosted-email-service) |
+|  | [v1 API specification](https://ches.api.gov.bc.ca/api/v1/docs) |
+| CDOGS | [github](https://github.com/bcgov/common-document-generation-service) |
+|  | [v1 API specification](https://cdogs.api.gov.bc.ca/api/v1/docs#tag/DocGen) |
+|  | [v2 API specification](https://cdogs.api.gov.bc.ca/api/v2/docs#tag/DocGen) |
+
+## Postman
+
+If you have not used [Postman](https://www.postman.com), we recommend that you [familiarize](https://learning.postman.com) yourself with it. You can download it [here](https://www.postman.com/downloads/).
+
+Install Postman and get it running, then you can import the collection for the API you want to test:
+
+* CHES: [CHES.postman_collection.json](/common-service-showcase/assets/files/CHES.postman_collection.json)
+* CDOGS: [CDOGS.postman_collection.json](/common-service-showcase/assets/files/CDOGS.postman_collection.json)
+* COMS: [COMS.postman_collection.json](/common-service-showcase/assets/files/COMS.postman_collection.json)
+**Note: COMS is a self-hosted service**
+
+## Setup
+
+You will need to set the [collection variables](https://learning.postman.com/docs/postman/collections/intro-to-collections/), or run the tests with an [environment](https://learning.postman.com/docs/postman/variables-and-environments/managing-environments/) that configures the following:
+
+| Name | Description |
+| --- | --- |
+| auth\_host | Host for authentication service to get client token |
+| cdogs\_host | Host for CDOGS Service |
+| ches\_host | Host for CHES Service |
+| service\_client\_id | Set this to *YOUR* client id from the API Services Portal |
+| service\_client\_secret | Set this to *YOUR* client secret from the API Services Portal |
+| email\_to | Set this to *YOUR* email, you will get emails from CHES |
+
+### Environments
+By default, the hosts are set to the DEV environment.
+
+| DEV | URL |
+| --- | --- |
+| auth\_host | https://dev.loginproxy.gov.bc.ca |
+| cdogs\_host | https://cdogs-dev.api.gov.bc.ca |
+| ches\_host | https://ches-dev.api.gov.bc.ca |
+
+| TEST | URL |
+| --- | --- |
+| auth\_host | https://test.loginproxy.gov.bc.ca |
+| cdogs\_host | https://cdogs-test.api.gov.bc.ca |
+| ches\_host | https://ches-test.api.gov.bc.ca |
+
+| PROD | URL |
+| --- | --- |
+| auth\_host | https://loginproxy.gov.bc.ca |
+| cdogs\_host | https://cdogs.api.gov.bc.ca |
+| ches\_host | https://ches.api.gov.bc.ca |
+
+## Overview
+Once you have set the host and client id/secret variables, you can begin running the API calls. The order of the calls is very important, as each call will set variables that are used in subsequent calls. In particular, you will always want to run "Request a Token" first.  If you encounter any 401 responses, try getting a new token.
+
+Each of the calls has a test (ensuring an expected response, checking headers, response values, etc.). Feel free to familiarize yourself with [tests and scripts](https://learning.postman.com/docs/postman/scripts/intro-to-scripts/). There is code in some Pre-request Scripts and Tests.  For example, setting the delayTS variable for delayed emails is done in a Pre-request Script. All ids used for getting or deleting a particular resource are done in Test scripts (read value, set a collection variable for next test).
+
+In the urls and the request body, you will notice collection variables or test variables like: `{{email_to}}`, `{{auth_host}}` and `{{delay_ts}}`.  In the CDOGS calls, you may notice a different variable substitution: `{d.firstName}` - this is for the CDOGS template substitution, not the Postman substitution.  Look at [CDOGS Application readme](https://github.com/bcgov/common-document-generation-service/blob/master/app/README.md) for more information.
+
+### Run the collection
+Use the [collection runner](https://learning.postman.com/docs/postman/collection-runs/intro-to-collection-runs/) to completely smoke test your credentials and the Common Services environments.  When running the collection, you should de-select the final call: **"CDOGS/upload template (select local template for body)"**, this call requires you to select a local file to upload as a template and cannot be automated.  Also, if you have previously uploaded a file through this call, you can expect to receive a 405 if the template is still in the server cache.
