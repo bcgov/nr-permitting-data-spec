@@ -23,7 +23,7 @@ bannertitle: Permitting
 email: nrm.datafoundations@gov.bc.ca
 description: >- # this means to ignore newlines until "baseurl:"
   Website for user documentation and marketing of the common services built by the Common Service Showcase Team.
-baseurl: "/common-service-showcase" # the subpath of your site, e.g. /blog
+baseurl: "/nr-permitting-data-spec" # the subpath of your site, e.g. /blog
 url: "https://bcgov.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 collections_dir: collections
