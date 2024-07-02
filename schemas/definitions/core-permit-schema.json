@@ -48,7 +48,8 @@
         "Omineca",
         "Skeena",
         "South Coast",
-        "Thompson-Okanagan"
+        "Thompson-Okanagan",
+        "West Coast"
       ]
     },
     "agency": {
@@ -114,28 +115,29 @@
         "New"
       ]
     },
-    "application_tracking_state": {
+    "application_lifecycle_state": {
       "type": "string",
       "description": "Tracking state of an application in progress.",
       "enum": [
         "Active",
         "Closed",
-        "On hold",
-        "Suspended"
-      ]
+        "On hold"
+    ]
     },
     "application_status": {
       "type": "string",
-      "description": "Status of the application to obtain a permit",
+      "description": "Status of the application during the process and final decision.",
       "enum": [
         "Abandoned",
         "Approved",
         "Cancelled",
-        "In Review",
+        "In Process",
+        "In Referral",
         "Issued",
         "Offered",
         "Rejected",
         "Requested",
+        "Suspended",
         "With client"
       ]
     },
@@ -220,7 +222,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the permit is adjudicated, approved or issued",
+      "description": "Date in which the permit is adjudicated as either issued or not issued.",
       "format": "date-time"
     },
     "amendment_date": {
