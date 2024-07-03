@@ -6,6 +6,7 @@
   "type": "object",
   "properties": {
     "project_linking_id": {
+      "$anchor": "project_linking_id",
       "type": "string",
       "description": "A unique key to track all permits related to a project or activity from all permitting systems.",
       "format": "uuid"
