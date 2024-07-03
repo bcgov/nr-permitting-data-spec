@@ -1,14 +1,38 @@
 {
-  "$id": "https://github.com/bcgov/nr-permitting-data-spec/tree/main",
+  "$id": "https://github.com/bcgov/nr-permitting-data-spec/schemas/definitions",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Housing Permitting Schema",
-  "description": "This data specification provides a standard list of values for Natural Resource Sector permitting data realted to housing attributes to supplement the core permit schema.",
+  "description": "This data specification provides a standard list of values for Natural Resource Sector permitting data realted to housing attributes to supplementing the core permit schema.",
   "type": "object",
   "properties": {
+    "project_linking_id": {"$ref": "core-permit-schema.json/project_linking_id"},
+    "project_name": {"$ref": "core-permit-schema.json/project_name"},
+    "project_description": {"$ref": "core-permit-schema.json/project_description"},
+    "project_location_description": {"$ref": "core-permit-schema.json/project_location_description"},
+    "physical_address": {"$ref": "core-permit-schema.json/physical_address"},
+    "region_name": {"$ref": "core-permit-schema.json/region_name"},
+    "agency": {"$ref": "core-permit-schema.json/agency"},
+    "business_domain": {"$ref": "core-permit-schema.json/business_domain"},
+    "application_id": {"$ref": "core-permit-schema.json/application_id"},
+    "application_name": {"$ref": "core-permit-schema.json/application_name"},
+    "application_type": {"$ref": "core-permit-schema.json/application_type"},
+    "application_tracking_state": {"$ref": "core-permit-schema.json/application_tracking_state"},
+    "application_status": {"$ref": "core-permit-schema.json/application_status"},
+    "permit_id": {"$ref": "core-permit-schema.json/permit_id"},
+    "permit_name": {"$ref": "core-permit-schema.json/permit_name"},
+    "permit_application_type": {"$ref": "core-permit-schema.json/permit_application_type"},
+    "received_date": {"$ref": "core-permit-schema.json/received_date"},
+    "tech_review_completion_date": {"$ref": "core-permit-schema.json/tech_review_completion_date"},
+    "rejected_date": {"$ref": "core-permit-schema.json/rejected_date"},
+    "adjudication_date": {"$ref": "core-permit-schema.json/adjudication_date"},
+    "amendment_date": {"$ref": "core-permit-schema.json/amendment_date"},
+    "fn_consultn_start_date": {"$ref": "core-permit-schema.json/fn_consultn_start_date"},
+    "fn_consultn_completion_date": {"$ref": "core-permit-schema.json/fn_consultn_completion_date"},
     "housing_dwelling_type": {
       "type": "string",
       "label": "Housing dwelling type",
       "description": "The type of dwelling units being developed, e.g, Single-family, Multi-family, Secondary Unit, Other (optional).",
+      "comment": "TODO: enums being reviewed",
       "enum": [
         "Single-family",
         "Multi-family",
@@ -22,8 +46,8 @@
     "housing_dwelling_type_code": {
       "type": ["string", "null"],
       "label": "Housing dwelling type code",
-      "description": "The code for the type of dwelling units being developed, e.g, SFD, MFD, SU, O.",
-      "enum": ["SFD", "MFD", "SU"]
+      "description": "The code for the type of dwelling units being developed.",
+      "examples": [ "SFD", "MFD", "SU" ]
     },
     "housing_dwelling_capacity_ranges": {
       "type": ["string", "null"],
@@ -53,9 +77,29 @@
       "label": "Social housing indicator",
       "description": "A value indicating whether the application's purpose pertains to Social Housing, i.e., Y, N, U.",
       "enum": ["Y", "N", "U"]
+    },
+    "version": {
+      "title": "Housing Permitting Schema Version ",
+      "description": "Defines the version of the schema being represented",
+      "type": "integer",
+      "default": 1,
+      "enum": [0.1]
     }
   },
   "required": [
+    "project_linking_id",
+    "region_name",
+    "agency",
+    "business_domain",
+    "source_system_acronym",
+    "application_id",
+    "application_type",
+    "application_tracking_state",
+    "application_status",
+    "project_id",
+    "permit_application_type",
+    "permit_name",
+    "received_date",
     "housing_dwelling_type",
     "housing_dwelling_capacity",
     "purpose_build_rental_ind",
