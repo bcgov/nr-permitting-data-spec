@@ -10,16 +10,16 @@ description: Founded in 2023, we are a cross-functional agile team, building on 
 <h4>Contact us</h4>
 <ul>
     <li>
-        <img src="{{ site.baseurl }}/assets/images/rocketchat-brands.svg" alt="Contact Us on Rocket Chat" />
+        <img src="{{ site.baseurl }}/assets/images/rocketchat-brands.svg" alt="Contact Us via GitHub issues" />
         <span>
-            Find developer support on our Rocket.Chat channel:<br />
-            <a href="https://chat.developer.gov.bc.ca/channel/nr-common-services-showcase" target="_blank">#nr-common-services-showcase</a>
+            Find developer support by raising a GitHub issue with us:<br />
+            <a href="https://github.com/bcgov/nr-permitting-data-spec/issues" target="_blank">#nr-permitting-data</a>
         </span>
     </li>
     <li>
         <img src="{{ site.baseurl }}/assets/images/email.svg" alt="Email Us" />
         <span>
-            &nbsp;Email: <a href="mailto:nr.commonserviceshowcase@gov.bc.ca">NR.CommonServiceShowcase@gov.bc.ca</a>
+            &nbsp;Email: <a href="mailto:nrm.datafoundations@gov.bc.ca">NR.CommonServiceShowcase@gov.bc.ca</a>
         </span>
     </li>
 </ul>
