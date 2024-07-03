@@ -1,6 +1,5 @@
 {% assign current = page.url | downcase | split: '/' %}
 {% assign commonServices = site.services | sort: 'order' %}
-{% assign onboarding = site.onboarding | sort: 'order' %}
 
 <nav class="navigation-main" id="navbar">
   <div class="container">
@@ -17,16 +16,6 @@
           {% endfor %}
         </div>
       </li>
-      <li class="nav-item dropdown  {% if page.url contains '/onboarding/' %}active{% endif %}">
-        <a class="nav-link dropdown-toggle" href="#" id="onbDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Onboard
-        </a>
-        <div class="dropdown-menu" aria-labelledby="onbDropdown">
-          {% for card in onboarding %}
-            <a class="dropdown-item" href="{{ site.baseurl }}{{ card.url }}.html">{{ card.title }}</a>
-          {% endfor %}
-        </div>
       <li><a href='https://github.com/bcgov/common-service-showcase/wiki' target="_blank">Wiki</a></li>
       <li class="{% if page.url == '/team.html' %}active{% endif %}"><a href='{{ site.baseurl }}/team.html'>Our Team</a></li>
     </ul>
