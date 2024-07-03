@@ -19,7 +19,7 @@ description: Founded in 2023, we are a cross-functional agile team, building on 
     <li>
         <img src="{{ site.baseurl }}/assets/images/email.svg" alt="Email Us" />
         <span>
-            &nbsp;Email: <a href="mailto:nrm.datafoundations@gov.bc.ca">NR.CommonServiceShowcase@gov.bc.ca</a>
+            &nbsp;Email: <a href="mailto:nrm.datafoundations@gov.bc.ca">nrm.datafoundations@gov.bc.ca</a>
         </span>
     </li>
 </ul>
