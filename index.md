@@ -38,6 +38,9 @@ name: HOME
       <span class="sr-only">Next</span>
     </a>
   </div>
+
+  <div class="mb-3 mt-5 px-5">
+    <p>This website provides information relating to a range of services and open-source software components created by the Common Service Showcase team. We aim to promote, curate, develop, and make it easy to onboard to our hosted services or integrate our micro-services and common components into your own applications. The goal is to <strong>reduce costs, accelerate development, and promote consistency</strong> and supportability of BC Gov digital services.</p>
     
     <!-- Integrated Wiki Content -->
     <div class="wiki-content">
@@ -76,7 +79,7 @@ The common specifications are to
 
 ### Schemas
 
-<table>
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>Subject</th>
@@ -89,33 +92,33 @@ The common specifications are to
     <tr>
       <td>Core Specification</td>
       <td>The core permitting content, structure, data types, and expected enums that are consistent across all permitting datasets.</td>
-      <td><a href=\"core-permit-schema.json\">json</a></td>
-      <td><a href=\"core-permit-schema.md\">doc</a></td>
+      <td><a href='core-permit-schema.json'>json</a></td>
+      <td><a href='core-permit-schema.md'>doc</a></td>
     </tr>
     <tr>
       <td>Housing Specification</td>
       <td>The housing specific schema elements that extend the core schema.</td>
-      <td><a href=\"housing-permit-schema.json\">json</a></td>
-      <td><a href=\"housing-permit-schema.md\">doc</a></td>
+      <td><a href='housing-permit-schema.json'>json</a></td>
+      <td><a href='housing-permit-schema.md'>doc</a></td>
     </tr>
     <tr>
       <td>Metadata Specification</td>
       <td>The metadata elements required and captured while discovering and onboarding into an integrated dataset.</td>
-      <td><a href=\"metadata-discovery-schema.json\">json</a></td>
-      <td><a href=\"metadata-discovery-schema.md\">doc</a></td>
+      <td><a href='metadata-discovery-schema.json'>json</a></td>
+      <td><a href='metadata-discovery-schema.md'>doc</a></td>
     </tr>
     <tr>
       <td>Permit Name Registry Specification</td>
       <td>This spec is to enable the registry of permit names from source systems/information to be used as enums in the core Core Specification.</td>
-      <td><a href=\"permit-name-registry-schema.json\">json</a></td>
-      <td><a href=\"permit-name-registry-schema.md\">doc</a></td>
+      <td><a href='permit-name-registry-schema.json'>json</a></td>
+      <td><a href='permit-name-registry-schema.md'>doc</a></td>
     </tr>
   </tbody>
 </table>
 
 ### Scripts
 
-<table>
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>Subject</th>
@@ -127,12 +130,12 @@ The common specifications are to
     <tr>
       <td>Validation</td>
       <td>This package takes a JSON document and validates it against an expected schema structure as defined in a JSON schema definition file.</td>
-      <td><a href=\"https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/schemas/validation/README.md\">readme</a></td>
+      <td><a href='https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/schemas/validation/README.md'>readme</a></td>
     </tr>
     <tr>
       <td>Auto-generation of docs</td>
       <td>This package converts JSON schema definition files into markdown files.</td>
-      <td><a href=\"https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/autogen/docs/README.md\">readme</a></td>
+      <td><a href='https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/autogen/docs/README.md'>readme</a></td>
     </tr>
   </tbody>
 </table>
