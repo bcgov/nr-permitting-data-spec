@@ -40,9 +40,8 @@ name: HOME
   </div>
 
   <div class="mb-3 mt-5 px-5">
-    <p>Our Team:
- 
-Founded in 2023, we are a data driven team, developing data standards with our partners and from work done by former contributors and projects. Our team focuses on enabling cross-sector permitting data best practices with the ultimate goal of being able to effectively integrate permitting data within the province.</p>
+    <p><strong>Our Team:</strong><br><br>
+    Founded in 2023, we are a data driven team, developing data standards with our partners and from work done by former contributors and projects. Our team focuses on enabling cross-sector permitting data best practices with the ultimate goal of being able to effectively integrate permitting data within the province.</p>
     <div class="row">
       {% for card in iconCards %}
       <div class="icon-list col-sm-4">
@@ -63,37 +62,5 @@ Founded in 2023, we are a data driven team, developing data standards with our p
       </div>
     </div>
     {% endfor %}
-  </div>
-  <div class="text-center my-5">
-    <h3 class="title-text" id="home-component-cards"> <img class="img-fluid mr-3" src="{{ site.baseurl }}/assets/images/developer_board.svg" alt="components"> <strong>Available Common Components</strong></h3>
-  </div>
-  <div class="mb-5 service-card-list">
-    <div class="row">
-      {% for card in commonServices %}
-      <div class="col-md-6">
-        <a class="linked-card" href="{{ site.baseurl }}{{ card.url }}.html">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-10 col-xl-11">
-                  <h3 class="card-title">{{ card.title }} ({{ card.name }}) {{ card.version }}</h3>
-                </div>
-                <div class="col-2 col-xl-1 text-right">
-                  <i class="fa fa-lg fa-arrow-circle-right"></i>
-                </div>
-              </div>
-              <strong>Onboarding Options:</strong>
-              <br />
-              <ul class="service-onboard">
-                {% for onb in card.onboard %}
-                  <li>{{ onb }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
   </div>
 </div>
