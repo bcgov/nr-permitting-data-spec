@@ -79,19 +79,66 @@ The common specifications are to
 
 ### Schemas
 
-| Subject | Description |JSON| DOC| 
-| --- | --- | --- | --- |
-| Core Specification | The core permitting content, structure, data types, and expected enums that are consistent across all permitting datasets. | [json](core-permit-schema.json)| [doc](core-permit-schema.md) | 
-| Housing Specification | The housing specific schema elements that extend the core schema. | [json](housing-permit-schema.json)| [doc](housing-permit-schema.md)|
-| Metadata Specification |The metadata elements required and captured while discovering and onboarding into an integrated dataset. |[json](metadata-discovery-schema.json) |[doc](metadata-discovery-schema.md)  |
-| Permit Name Registry Specification |This spec is to enable the registry of permit names from source systems/information to be used as enums in the core Core Specification. |[json](permit-name-registry-schema.json) |[doc](permit-name-registry-schema.md)  |
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Description</th>
+      <th>JSON</th>
+      <th>DOC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Core Specification</td>
+      <td>The core permitting content, structure, data types, and expected enums that are consistent across all permitting datasets.</td>
+      <td><a href=\"core-permit-schema.json\">json</a></td>
+      <td><a href=\"core-permit-schema.md\">doc</a></td>
+    </tr>
+    <tr>
+      <td>Housing Specification</td>
+      <td>The housing specific schema elements that extend the core schema.</td>
+      <td><a href=\"housing-permit-schema.json\">json</a></td>
+      <td><a href=\"housing-permit-schema.md\">doc</a></td>
+    </tr>
+    <tr>
+      <td>Metadata Specification</td>
+      <td>The metadata elements required and captured while discovering and onboarding into an integrated dataset.</td>
+      <td><a href=\"metadata-discovery-schema.json\">json</a></td>
+      <td><a href=\"metadata-discovery-schema.md\">doc</a></td>
+    </tr>
+    <tr>
+      <td>Permit Name Registry Specification</td>
+      <td>This spec is to enable the registry of permit names from source systems/information to be used as enums in the core Core Specification.</td>
+      <td><a href=\"permit-name-registry-schema.json\">json</a></td>
+      <td><a href=\"permit-name-registry-schema.md\">doc</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Scripts
 
-| Subject | Description |Readme|
-| --- | --- | --- |
-| Validation | This package takes a JSON document and validates it against an expected schema structure as defined in a JSON schema definition file. |[readme](https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/schemas/validation/README.md) |
-| Auto-generation of docs | This package converts JSON schema definition files into markdown files. | [readme](https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/autogen/docs/README.md) |
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Readme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Validation</td>
+      <td>This package takes a JSON document and validates it against an expected schema structure as defined in a JSON schema definition file.</td>
+      <td><a href=\"https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/schemas/validation/README.md\">readme</a></td>
+    </tr>
+    <tr>
+      <td>Auto-generation of docs</td>
+      <td>This package converts JSON schema definition files into markdown files.</td>
+      <td><a href=\"https://github.com/bcgov/nr-permitting-data-spec/blob/630b56ce631adf02dc819ec54bd710cc1e57276e/tools/autogen/docs/README.md\">readme</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Future
 
