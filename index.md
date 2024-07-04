@@ -40,7 +40,9 @@ name: HOME
   </div>
 
   <div class="mb-3 mt-5 px-5">
-    <p>This website provides information relating to a range of services and open-source software components created by the Common Service Showcase team. We aim to promote, curate, develop, and make it easy to onboard to our hosted services or integrate our micro-services and common components into your own applications. The goal is to <strong>reduce costs, accelerate development, and promote consistency</strong> and supportability of BC Gov digital services.</p>
+    <p>Our Team:
+ 
+Founded in 2023, we are a data driven team, developing data standards with our partners and from work done by former contributors and projects. Our team focuses on enabling cross-sector permitting data best practices with the ultimate goal of being able to effectively integrate permitting data within the province.</p>
     <div class="row">
       {% for card in iconCards %}
       <div class="icon-list col-sm-4">
