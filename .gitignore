@@ -129,3 +129,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# UI elements from common-service-showcase GitHub folder
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+.idea
+common-service-showcase.iml
+.DS_Store

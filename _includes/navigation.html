@@ -1,0 +1,29 @@
+{% assign current = page.url | downcase | split: '/' %}
+
+<nav class="navigation-main" id="navbar">
+  <div class="container">
+    <ul>
+      <li class="{% if page.url == '/' %}active{% endif %}"><a href='{{ site.baseurl }}/'>About</a></li>
+      <li class="nav-item dropdown {% if page.url contains '/Schemas/' %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" href="#" id="compDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Available Schemas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="compDropdown">
+          {% for card in commonServices %}
+            <a class="dropdown-item" href="{{ site.baseurl }}{{ card.url }}.html">{{ card.title }}</a>
+          {% endfor %}
+          <!-- Adding direct links to markdown files -->
+          <a class="dropdown-item" href="{{ site.baseurl }}/autogen_docs/schemas/core-permit-schema.md">Core Permit Schema</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/autogen_docs/schemas/housing-permit-schema.md">Housing Permit Schema</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/autogen_docs/schemas/metadata-discovery-schema.md">Metadata Discovery Schema</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/autogen_docs/schemas/permit-name-registry-schema.md">Permit Name Registry Schema</a>
+          <a class="dropdown-item" href="https://github.com/bcgov/nr-permitting-data-spec/tree/github-io-dev/autogen_docs/schemas">Schemas Github</a>
+        </div>
+      </li>
+      
+      <li><a href='https://github.com/bcgov/nr-permitting-data-spec/wiki' target="_blank">Wiki</a></li>
+      <li class="{% if page.url == '/team.html' %}active{% endif %}"><a href='{{ site.baseurl }}/team.html'>Our Team</a></li>
+    </ul>
+  </div>
+</nav>
