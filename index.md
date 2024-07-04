@@ -169,17 +169,6 @@ Along with the data specification will be the design presentation to enable a co
       </div>
       {% endfor %}
     </div>
-  </div>
-  <div class="checkerboard mb-5">
-    {% for card in checkerboardCards %}
-    <div class="row">
-      <div class="col-sm-4 check-title d-flex justify-content-center align-items-center">
-          {{ card.title }}
-      </div>
-      <div class="col-sm-8 check-content">
-          {{ card.content }}
-      </div>
-    </div>
-    {% endfor %}
+ 
   
 
