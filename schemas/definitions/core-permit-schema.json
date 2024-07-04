@@ -5,52 +5,71 @@
   "description": "This data specification provides a standard list of values for Natural Resource Sector core permitting data.",
   "type": "object",
   "properties": {
-    "project_linking_id": {
-      "type": "string",
-      "description": "A unique key to track all permits related to a project or activity from all permitting systems.",
-      "format": "uuid"
+    "project_details": {
+      "type": "object",
+      "description": "Details for a project.",
+      "properties": {
+        "project_linking_id": {
+          "type": "string",
+          "description": "A unique key to track all permits related to a project or activity from all permitting systems.",
+          "format": "uuid"
+        },
+        "project_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Short name of the project, e.g., The Hudson, Capitol Hill."
+        },
+        "project_description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Full description of the project. This field may contain information to better understand a project"
+        }
+      }
     },
-    "project_name": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Short name of the project, e.g., The Hudson, Capitol Hill."
-    },
-    "project_description": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Full description of the project. This field may contain information to better understand a project"
-    },
-    "project_location_description": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "A short description for the geographical location or area of interest of the project."
-    },
-    "physical_address": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "This is the physical address if provided for a project."
-    },
-    "region_name": {
-      "type": "string",
-      "description": "Natural Resource administrative boundary associated with the physical project location.",
-      "enum": [
-        "Cariboo",
-        "Kootenay-Boundary",
-        "Northeast",
-        "Omineca",
-        "Skeena",
-        "South Coast",
-        "Thompson-Okanagan",
-        "West Coast"
-      ]
+    "location_details": {
+      "type": "object",
+      "description": "Details for a location of a project or activity.",
+      "properties": {
+        "project_location_description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A short description for the geographical location or area of interest of the project."
+        },
+        "physical_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "This is the physical address if provided for a project."
+        },
+        "parcel_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Is the the Parcel ID (PID), if there is one. If there is a PIN but no PID, then it is the PIN. If there is no PID nor PIN, then may be empty and another attribute populated with location details."
+        },
+        "region_name": {
+          "type": "string",
+          "description": "Natural Resource administrative boundary associated with the physical project location.",
+          "enum": [
+            "Cariboo",
+            "Kootenay-Boundary",
+            "Northeast",
+            "Omineca",
+            "Skeena",
+            "South Coast",
+            "Thompson-Okanagan",
+            "West Coast"
+          ]
+        }
+      }
     },
     "agency": {
       "type": "string",
@@ -69,6 +88,7 @@
     "business_domain": {
       "type": "string",
       "description": "Business domain, office or area responsible for the permit.",
+      "comment": "TODO: Enum list will come from an authorized source or be defined by a registry.",
       "enum": [
         "Archaeology",
         "Contaminated Sites",
@@ -81,6 +101,7 @@
     "source_system_acronym": {
       "type": "string",
       "description": "Acronym for the source system providing the permit tracking.",
+      "comment": "TODO: Enum list will come from an authorized source like IRS.",
       "enum": [
         "APTS",
         "CATS",
@@ -94,103 +115,116 @@
         "WMA"
       ]
     },
-    "application_id": {
-      "type": "string",
-      "description": "Unique ID of the submitted application for a permit."
+    "application_details": {
+      "type": "object",
+      "description": "Details for a application for a permit.",
+      "properties": {
+        "application_id": {
+          "type": "string",
+          "description": "Unique ID of the submitted application for a permit."
+        },
+        "application_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the application for a permit."
+        },
+        "application_type": {
+          "type": "string",
+          "description": "The form type for a permit or licence application.",
+          "enum": [
+            "Amendment",
+            "Cancel",
+            "Change Ownership",
+            "New"
+          ]
+        },
+        "application_lifecycle_state": {
+          "type": "string",
+          "description": "Tracking state of an application in progress.",
+          "enum": [
+            "Active",
+            "Closed",
+            "On hold"
+          ]
+        },
+        "application_status": {
+          "type": "string",
+          "description": "Status of the application during the process and final decision.",
+          "enum": [
+            "Abandoned",
+            "Approved",
+            "Cancelled",
+            "In Process",
+            "In Referral",
+            "Issued",
+            "Offered",
+            "Rejected",
+            "Requested",
+            "Suspended",
+            "With client"
+          ]
+        }
+      }
     },
-    "application_name": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Name of the application for a permit."
-    },
-    "application_type": {
-      "type": "string",
-      "description": "The form type for a permit or licence application.",
-      "enum": [
-        "Amendment",
-        "Cancel",
-        "Change Ownership",
-        "New"
-      ]
-    },
-    "application_lifecycle_state": {
-      "type": "string",
-      "description": "Tracking state of an application in progress.",
-      "enum": [
-        "Active",
-        "Closed",
-        "On hold"
-    ]
-    },
-    "application_status": {
-      "type": "string",
-      "description": "Status of the application during the process and final decision.",
-      "enum": [
-        "Abandoned",
-        "Approved",
-        "Cancelled",
-        "In Process",
-        "In Referral",
-        "Issued",
-        "Offered",
-        "Rejected",
-        "Requested",
-        "Suspended",
-        "With client"
-      ]
-    },
-    "permit_id": {
-      "type": "string",
-      "description": "A permit specific ID used to identify the issued permit id. A meaningful number/code used by the business area to identify the permit.",
-      "format": "uuid"
-    },
-    "permit_name": {
-      "type": "string",
-      "description": "The business domain permit name type",
-      "enum": [
-        "Change approval for work in and about a stream",
-        "Commercial General",
-        "Contaminated Sites Remediation",
-        "Groundwater Licence",
-        "Heritage Inspection Permit",
-        "Highway Use Permit",
-        "Investigation Permit",
-        "Municipal subdivision",
-        "Nominal Rent Tenure",
-        "Notification of authorized changes in and about a stream",
-        "Occupant Licence to Cut",
-        "Other",
-        "Private Timber Mark",
-        "Residential",
-        "Rezoning",
-        "Riparian Area Development Permit",
-        "Roadways - Public",
-        "Rural subdivision",
-        "Short-term use approval",
-        "Site Alteration Permit",
-        "Sponsored Crown Grant",
-        "Surface Water Licence",
-        "Utilities"
-      ]
-    },
-    "permit_application_type": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "The form type for a permit or licence application",
-      "enum": [
-        "New",
-        "Amendment",
-        "Cancel",
-        "Change Ownership"
-      ]
+    "permit_details": {
+      "type": "object",
+      "description": "Details for a permit as these may be different than the application.",
+      "properties": {
+        "permit_id": {
+          "type": "string",
+          "description": "A permit specific ID used to identify the issued permit id. A meaningful number/code used by the business area to identify the permit.",
+          "format": "uuid"
+        },
+        "permit_name": {
+          "type": "string",
+          "description": "The business domain permit name type.",
+          "comment": "TODO: Enum will come from the permit name registry. This list is current associated with housing permits.",
+          "enum": [
+            "Change approval for work in and about a stream",
+            "Commercial General",
+            "Contaminated Sites Remediation",
+            "Groundwater Licence",
+            "Heritage Inspection Permit",
+            "Highway Use Permit",
+            "Investigation Permit",
+            "Municipal subdivision",
+            "Nominal Rent Tenure",
+            "Notification of authorized changes in and about a stream",
+            "Occupant Licence to Cut",
+            "Other",
+            "Private Timber Mark",
+            "Residential",
+            "Rezoning",
+            "Riparian Area Development Permit",
+            "Roadways - Public",
+            "Rural subdivision",
+            "Short-term use approval",
+            "Site Alteration Permit",
+            "Sponsored Crown Grant",
+            "Surface Water Licence",
+            "Utilities"
+          ]
+        },
+        "permit_application_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The form type for a permit application.",
+          "enum": [
+            "New",
+            "Amendment",
+            "Cancel",
+            "Change Ownership"
+          ]
+        }
+      }
     },
     "received_date": {
       "type": "string",
-      "description": "Date in which the application for permit was submitted",
+      "description": "Date in which the application for permit was submitted.",
       "format": "date-time"
     },
     "accepted_date": {
@@ -198,7 +232,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the review of the initial application's completeness concludes",
+      "description": "Date in which the review of the initial application's completeness concludes.",
       "format": "date-time"
     },
     "tech_review_completion_date": {
@@ -206,7 +240,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the technical team concludes their review of the application",
+      "description": "Date in which the technical team concludes their review of the application.",
       "format": "date-time"
     },
     "rejected_date": {
@@ -214,7 +248,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the permit is rejected",
+      "description": "Date in which the permit is rejected.",
       "format": "date-time"
     },
     "adjudication_date": {
@@ -230,7 +264,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the permit is amended",
+      "description": "Date in which the permit is amended.",
       "format": "date-time"
     },
     "fn_consultn_start_date": {
@@ -238,7 +272,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the consultation with First Nations starts",
+      "description": "Date in which the consultation with First Nations starts.",
       "format": "date-time"
     },
     "fn_consultn_completion_date": {
@@ -246,7 +280,7 @@
         "string",
         "null"
       ],
-      "description": "Date in which the consultation with First Nations ends",
+      "description": "Date in which the consultation with First Nations ends.",
       "format": "date-time"
     }
   },
