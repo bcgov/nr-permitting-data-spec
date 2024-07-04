@@ -54,13 +54,12 @@ name: HOME
 ![Data:Schema](https://img.shields.io/badge/Data-Schema-aqua)
 
 ## Description
-This repository contains common schemas related to permitting in the Natural Resources Sector. 
-
+This repository contains common schemas related to permitting in the Natural Resources Sector for the Province of British Columbia. 
 The intent of these are to standardize the way permitting in the Natural Resource Sector is described as data to enable quality and interoperability.
 
-Hosting these will enable and ensure version history will be maintained.
+Hosting this specification in the open will encourage collaboration, adoption and enable versioning.
 
-These will be reviewed as required with the related data managers and permitting teams.
+These will be reviewed and updated with relevant partners, data custodians, stewards and sector permitting teams.
 
 ## Purpose
 
@@ -69,13 +68,12 @@ The common specifications are to
 * create cross sector data governance
 * feed intelligence to the sector
 * moving towards harmonized statuses 
-* activity-based permit bundling
-* and application process tracking
+* activity-based permit bundling and application process tracking
 * enable consistent collection of data and metadata
 * leverage for an integrated data schema for reporting and analytics
-* identify opportunities on data quality, data visualizations, and gaps
-* develops data patterns and guidelines
-* develop common schema patterns for other areas like First Nations Consultation
+* identify opportunities to improve data quality, create data visualizations and identify gaps
+* help develop patterns for data collection, integration and aggregation
+* develop common schema patterns to use as a template for other interests
 
 ## Overview
 
