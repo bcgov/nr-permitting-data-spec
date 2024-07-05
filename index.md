@@ -99,19 +99,19 @@ The common specifications are to
       <td>Housing Specification</td>
       <td>The housing specific schema elements that extend the core schema.</td>
       <td><a href='housing-permit-schema.json'>json</a></td>
-      <td><a href='housing-permit-schema.md'>doc</a></td>
+      <td><a href='https://bcgov.github.io/nr-permitting-data-spec/autogen_docs/schemas/housing-permit-schema.md'>doc</a></td>
     </tr>
     <tr>
       <td>Metadata Specification</td>
       <td>The metadata elements required and captured while discovering and onboarding into an integrated dataset.</td>
       <td><a href='metadata-discovery-schema.json'>json</a></td>
-      <td><a href='metadata-discovery-schema.md'>doc</a></td>
+      <td><a href='https://bcgov.github.io/nr-permitting-data-spec/autogen_docs/schemas/metadata-discovery-schema.md'>doc</a></td>
     </tr>
     <tr>
       <td>Permit Name Registry Specification</td>
       <td>This spec is to enable the registry of permit names from source systems/information to be used as enums in the core Core Specification.</td>
       <td><a href='permit-name-registry-schema.json'>json</a></td>
-      <td><a href='permit-name-registry-schema.md'>doc</a></td>
+      <td><a href='https://bcgov.github.io/nr-permitting-data-spec/autogen_docs/schemas/permit-name-registry-schema.md'>doc</a></td>
     </tr>
   </tbody>
 </table>
