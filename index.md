@@ -93,7 +93,7 @@ The common specifications are to
       <td>Core Specification</td>
       <td>The core permitting content, structure, data types, and expected enums that are consistent across all permitting datasets.</td>
       <td><a href='core-permit-schema.json'>json</a></td>
-      <td><a href='core-permit-schema.md'>doc</a></td>
+      <td><a href='https://bcgov.github.io/nr-permitting-data-spec/autogen_docs/schemas/core-permit-schema.md'>doc</a></td>
     </tr>
     <tr>
       <td>Housing Specification</td>
