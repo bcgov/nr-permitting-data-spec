@@ -1,4 +1,4 @@
-# Core Permitting Schema
+# Core Permitting Schema v0
 
 *This data specification provides a standard list of values for Natural Resource Sector core permitting data.*
 
