@@ -1,43 +1,13 @@
 {
-  "$id": "https://github.com/bcgov/nr-permitting-data-spec/tree/main/#/schemas/definitions/core-permit-schema.json",
+  "$id": "https://raw.githubusercontent.com/bcgov/nr-permitting-data-spec/fix/ref-external-schemas/schemas/v0/definitions/core-permit-schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Core Permitting Schema",
   "description": "This data specification provides a standard list of values for Natural Resource Sector core permitting data.",
   "type": "object",
   "properties": {
-    "project_linking_id": {
-      "type": "string",
-      "description": "A unique key to track all permits related to a project or activity from all permitting systems.",
-      "format": "uuid"
-    },
-    "project_name": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Short name of the project, e.g., The Hudson, Capitol Hill."
-    },
-    "project_description": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Full description of the project. This field may contain information to better understand a project"
-    },
-    "project_location_description": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "A short description for the geographical location or area of interest of the project."
-    },
-    "physical_address": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "This is the physical address if provided for a project."
-    },
+    "project": {"$ref": "/v0/objects/project.json"},
+    "application": {"$ref":"/v0/objects/application.json"},
+    
     "region_name": {
       "type": "string",
       "description": "Natural Resource administrative boundary associated with the physical project location.",
@@ -94,53 +64,10 @@
         "WMA"
       ]
     },
-    "application_id": {
-      "type": "string",
-      "description": "Unique ID of the submitted application for a permit."
-    },
-    "application_name": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Name of the application for a permit."
-    },
-    "application_type": {
-      "type": "string",
-      "description": "The form type for a permit or licence application.",
-      "enum": [
-        "Amendment",
-        "Cancel",
-        "Change Ownership",
-        "New"
-      ]
-    },
-    "application_lifecycle_state": {
-      "type": "string",
-      "description": "Tracking state of an application in progress.",
-      "enum": [
-        "Active",
-        "Closed",
-        "On hold"
-    ]
-    },
-    "application_status": {
-      "type": "string",
-      "description": "Status of the application during the process and final decision.",
-      "enum": [
-        "Abandoned",
-        "Approved",
-        "Cancelled",
-        "In Process",
-        "In Referral",
-        "Issued",
-        "Offered",
-        "Rejected",
-        "Requested",
-        "Suspended",
-        "With client"
-      ]
-    },
+
+
+    
+   
     "permit_id": {
       "type": "string",
       "description": "A permit specific ID used to identify the issued permit id. A meaningful number/code used by the business area to identify the permit.",

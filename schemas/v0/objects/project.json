@@ -1,8 +1,8 @@
 {
-    "$id":"/project.json",
+    "$id":"https://raw.githubusercontent.com/bcgov/nr-permitting-data-spec/fix/ref-external-schemas/schemas/v0/objects/project.json",
     "title": "Project Object",
     "description":"Project contain context about the project.",
-    "version": "0.1",
+    "version": "0",
     "type": "object",
     "properties": {
         "project_linking_id": {

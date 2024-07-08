@@ -1,6 +1,6 @@
 {
-    "$id": "/address.json",
-    "version": "0.1",
+    "$id": "https://raw.githubusercontent.com/bcgov/nr-permitting-data-spec/fix/ref-external-schemas/schemas/v0/objects/address.json",
+    "version": "0",
     "title": "Address Object",
     "description": "An address similar to http://microformats.org/wiki/h-card",
     "type": "object",
