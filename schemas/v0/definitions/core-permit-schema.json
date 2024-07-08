@@ -1,13 +1,13 @@
 {
   "$id": "https://raw.githubusercontent.com/bcgov/nr-permitting-data-spec/fix/ref-external-schemas/schemas/v0/definitions/core-permit-schema.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  
   "title": "Core Permitting Schema",
   "description": "This data specification provides a standard list of values for Natural Resource Sector core permitting data.",
   "type": "object",
   "properties": {
     "project": {"$ref": "/v0/objects/project.json"},
     "application": {"$ref":"/v0/objects/application.json"},
-    
+
     "region_name": {
       "type": "string",
       "description": "Natural Resource administrative boundary associated with the physical project location.",
