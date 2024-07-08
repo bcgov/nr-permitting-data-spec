@@ -1,0 +1,60 @@
+{
+  "$id":"https://github.com/bcgov/nr-data-hub/tree/main/schemas/mvd.schema.json",
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Permit Name Registry Schema",
+  "description":"This data specification enables the creation of a standard list of permit names for the Natural Resource Sector permitting systems.",
+  "type":"object",
+  "properties":{
+     "permit-name-registry-id":{
+        "type":"string",
+        "description":"A unique key of registered permit names.",
+        "format":"uuid"
+     },
+     "source_system_acronym":{
+        "type":"string",
+        "description":"Acronym for the source system providing the permit tracking."
+     },
+     "permit_name":{
+        "type":"string",
+        "description":"The business domain permit name type"
+     },
+     "permit_application_type":{
+        "type":[
+           "string",
+           "null"
+        ],
+        "description":"The form types for a permit or licence application",
+        "enum":[
+           "Amendment",
+           "Cancel",
+           "Change Ownership",
+           "New"
+        ]
+     },
+     "create_timestamp":{
+        "type":"date-time",
+        "description":"The date and time the record was created."
+     },
+     "create_user":{
+        "type":"string",
+        "description":"The user or proxy account that created the record."
+     },
+     "update_timestamp":{
+        "type":"date-time",
+        "description":"The date and time the record was created or last updated."
+     },
+     "update_user":{
+        "type":"string",
+        "description":"The user or proxy account that created or last updated the record."
+     }
+  },
+  "required":[
+     "permit-name-id",
+     "source_system_acronym",
+     "permit_name",
+     "create_timestamp",
+     "create_user",
+     "update_timestamp",
+     "update_user"
+  ]
+}

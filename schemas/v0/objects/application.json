@@ -1,0 +1,67 @@
+{
+    "$id": "/application.json",
+    "version": "0.1",
+    "title": "Application Object",
+    "description": "An address similar to http://microformats.org/wiki/h-card",
+    "type": "object",
+    "properties":{
+
+        "application_id": {
+        "type": "string",
+        "description": "Unique ID of the submitted application for a permit."
+        },
+
+
+        "application_name": {
+        "type": [
+            "string",
+            "null"
+        ],
+        "description": "Name of the application for a permit."
+        },
+        
+        
+        "application_type": {
+        "type": "string",
+        "description": "The form type for a permit or licence application.",
+        "enum": [
+            "Amendment",
+            "Cancel",
+            "Change Ownership",
+            "New"
+        ]
+        },
+        
+        
+        "application_lifecycle_state": {
+        "type": "string",
+        "description": "Tracking state of an application in progress.",
+        "enum": [
+            "Active",
+            "Closed",
+            "On hold"
+        ]
+        },
+        
+        
+        "application_status": {
+        "type": "string",
+        "description": "Status of the application during the process and final decision.",
+        "enum": [
+            "Abandoned",
+            "Approved",
+            "Cancelled",
+            "In Process",
+            "In Referral",
+            "Issued",
+            "Offered",
+            "Rejected",
+            "Requested",
+            "Suspended",
+            "With client"
+        ]
+        }
+    }
+
+
+}

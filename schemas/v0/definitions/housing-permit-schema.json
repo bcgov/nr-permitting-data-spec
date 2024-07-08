@@ -1,0 +1,92 @@
+{
+  "$id": "https://github.com/bcgov/nr-permitting-data-spec/tree/main",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Housing Permitting Schema",
+  "description": "This data specification provides a standard list of values for Natural Resource Sector permitting data realted to housing attributes to supplement the core permit schema.",
+  "type": "object",
+  "properties": {
+    "housing_dwelling_type": {
+      "type": "string",
+      "label": "Housing dwelling type",
+      "description": "The type of dwelling units being developed, e.g, Single-family, Multi-family, Secondary Unit, Other (optional).",
+      "enum": [
+        "Single-family",
+        "Multi-family",
+        "Secondary Unit",
+        "Duplexes",
+        "Apartments",
+        "Condominiums",
+        "Other"
+      ]
+    },
+    "housing_dwelling_type_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "label": "Housing dwelling type code",
+      "description": "The code for the type of dwelling units being developed, e.g, SFD, MFD, SU, O.",
+      "enum": [
+        "SFD",
+        "MFD",
+        "SU"
+      ]
+    },
+    "housing_dwelling_capacity_ranges": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "label": "Housing dwelling capacity ranges",
+      "description": "The number of dwelling or units defined in ranges.",
+      "enum": [
+        "1-9",
+        "10-49",
+        "50-500",
+        ">500"
+      ]
+    },
+    "housing_dwelling_capacity": {
+      "type": "integer",
+      "label": "Housing dwelling capacity",
+      "description": "The number of dwellings or units to be developed."
+    },
+    "purpose_built_rental_ind": {
+      "type": "string",
+      "label": "Purpose built rental indicator",
+      "description": "Indicating whether the application corresponds to a  purpose built residential unit, property, or dwelling that is available for long term rent by tenants, i.e., Y, N, U.",
+      "enum": [
+        "Y",
+        "N",
+        "U"
+      ]
+    },
+    "indigenous_led_ind": {
+      "type": "string",
+      "label": "Indigenous led indicator",
+      "description": "A value indicating whether the application is led by Indigenous groups, i.e., Y, N, U.",
+      "enum": [
+        "Y",
+        "N",
+        "U"
+      ]
+    },
+    "social_housing_ind": {
+      "type": "string",
+      "label": "Social housing indicator",
+      "description": "A value indicating whether the application's purpose pertains to Social Housing, i.e., Y, N, U.",
+      "enum": [
+        "Y",
+        "N",
+        "U"
+      ]
+    }
+  },
+  "required": [
+    "housing_dwelling_type",
+    "housing_dwelling_capacity",
+    "purpose_build_rental_ind",
+    "indigenous_led_ind",
+    "social_housing_ind"
+  ]
+}

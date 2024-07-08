@@ -1,0 +1,98 @@
+{
+  "source_system": "LOL",
+  "agency": "Ministry of Laughter",
+  "business": "Making people laugh",
+  "data_custodian": [
+    {
+      "name": "John John",
+      "email": "john.john@huh.com"
+    }
+  ],
+  "data_owner": [
+    {
+      "name": "John Johnson",
+      "email": "hmm@huh.com"
+    },
+    {
+      "name": "John McJohnson",
+      "email": "john.mc@huh.com"
+    }
+  ],
+  "data_specialist": [
+    {
+      "name": "John McJohnsonson",
+      "email": "john.mcson@huh.com"
+    }
+  ],
+  "data_quality_metrics": {
+    "accuracy": 90,
+    "completeness": 100,
+    "timeliness": 5,
+    "duplication": 10
+  },
+  "description": "This fictitious dataset shows data on who's laughed and where",
+  "security_classification": "Protected B",
+  "technology": {
+    "name": "Oracle",
+    "version": "19.20"
+  },
+  "tags": [
+    {
+      "key": "environment",
+      "value": "production"
+    }
+  ],
+  "categories": [
+    "extreme",
+    "cool"
+  ],
+  "storage_descriptor": [
+    {
+      "table_name": "lol",
+      "schema_name": "lmao",
+      "columns": [
+        {
+          "name": "uuid",
+          "type": "NUMBER",
+          "precision": "10",
+          "description": "Unique id field of the laughter",
+          "security_classification": "Protected B",
+          "nullable": false
+        },
+        {
+          "name": "laughter_status",
+          "type": "VARCHAR",
+          "precision": "256",
+          "description": "Status of the laughter",
+          "security_classification": "Protected A",
+          "nullable": false
+        }
+      ]
+    }
+  ],
+  "column_mapping": {
+    "lmao.lol.uuid": "id",
+    "lmao.lol.laughter_status": "application_status"
+  },
+  "extraction_query": "SELECT uuid AS id, laughter_status AS application_status FROM lmao.lol WHERE laughter_status IN ('ROFL', 'LOL', 'LMAO')",
+  "flowchart": {
+    "root": 0,
+    "nodes": [
+      "Was a permit approved today?",
+      "Great!",
+      "Oh no!"
+    ],
+    "edges": [
+      {
+        "origin_node": 0,
+        "destination_node": 1,
+        "text": "yes"
+      },
+      {
+        "origin_node": 0,
+        "destination_node": 2,
+        "text": "no"
+      }
+    ]
+  }
+}

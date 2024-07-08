@@ -1,0 +1,40 @@
+{
+    "$id":"/project.json",
+    "title": "Project Object",
+    "description":"Project contain context about the project.",
+    "version": "0.1",
+    "type": "object",
+    "properties": {
+        "project_linking_id": {
+        "type": "string",
+        "description": "A unique key to track all permits related to a project or activity from all permitting systems.",
+        "format": "uuid"
+        },
+        "project_name": {
+        "type": [
+            "string",
+            "null"
+        ],
+        "description": "Short name of the project, e.g., The Hudson, Capitol Hill."
+        },
+        "project_description": {
+        "type": [
+            "string",
+            "null"
+        ],
+        "description": "Full description of the project. This field may contain information to better understand a project"
+        },
+        "project_location_description": {
+        "type": [
+            "string",
+            "null"
+        ],
+        "description": "A short description for the geographical location or area of interest of the project."
+        },
+        "physical_address": {
+        "$ref": "./address.json",
+        "description": "This is the physical address if provided for a project."
+        }
+    }      ,
+    "required": ["project_linking_id","project_name","project_description","project_location_description","physical_address" ]
+}
