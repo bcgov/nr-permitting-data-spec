@@ -1,0 +1,181 @@
+{
+    "$id": "https://github.com/bcgov/nr-data-hub/tree/main/schemas/mvd.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Status Registry Schema",
+    "description": "This data specification enables the creation of a standard list of application status for the Natural Resource Sector permitting systems.",
+    "type": "object",
+    "properties": {
+      "source_system_acronym": {
+        "type": "string",
+        "description": "Acronym for the source system providing the permit tracking."
+      },
+      "activity_name": {
+        "type": "string",
+        "description": "Refers to the activity the permit application is for",
+        "enum": ["housing", "connectivity", "others"]
+      },
+      "permit_name": {
+        "type": "string",
+        "description": "The business domain permit name attached with the status"
+      },
+      "permit_application_type": {
+        "type": ["string", "null"],
+        "description": "The form types for a permit or licence application",
+        "enum": ["Amendment", "Cancel", "Change Ownership", "New"]
+      },
+      "application_process_state": {
+        "type": "object",
+        "description": "The state of the application process flow with corresponding system-specific statuses.",
+        "properties": {
+          "In-Progress": {
+            "type": "object",
+            "description": "Statuses for applications in review or in progress.",
+            "properties": {
+              "Screening": {
+                "type": "array",
+                "description": "Statuses for the screening process.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "The name of the status."
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Definition of the status."
+                    }
+                  },
+                  "required": ["status", "description"]
+                }
+              },
+              "Technical Review": {
+                "type": "array",
+                "description": "Statuses for the technical review process.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "The name of the status."
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "A description of the status."
+                    }
+                  },
+                  "required": ["status", "description"]
+                }
+              },
+              "Consultation": {
+                "type": "object",
+                "description": "Statuses for the consultation process.",
+                "properties": {
+                  "First Nation Consultation": {
+                    "type": "array",
+                    "description": "Statuses for First Nation consultation.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "description": "The name of the status."
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "A description of the status."
+                        }
+                      },
+                      "required": ["status", "description"]
+                    }
+                  },
+                  "Other Consultation": {
+                    "type": "array",
+                    "description": "Statuses for other types of consultation.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "description": "The name of the status."
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "A description of the status."
+                        }
+                      },
+                      "required": ["status", "description"]
+                    }
+                  }
+                },
+                "required": ["First Nation Consultation", "Other Consultation"]
+              }
+            },
+            "required": ["Screening", "Technical Review", "Consultation"]
+          },
+          "On-Hold": {
+            "type": "array",
+            "description": "Statuses for applications that are on hold.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "The name of the status."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "A description of the status."
+                }
+              },
+              "required": ["status", "description"]
+            }
+          },
+          "Decision": {
+            "type": "array",
+            "description": "Statuses for applications where a decision has been made.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "The name of the status."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "A description of the status."
+                }
+              },
+              "required": ["status", "description"]
+            }
+          },
+          "Closed": {
+            "type": "array",
+            "description": "Statuses for applications that are closed.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "The name of the status."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "A description of the status."
+                }
+              },
+              "required": ["status", "description"]
+            }
+          }
+        },
+        "required": ["In-Progress", "On-Hold", "Decision", "Completed"]
+      }
+    },
+    "required": [
+      "source_system_acronym",
+      "permit_name",
+      "activity_name",
+      "application_state"
+    ]
+  }
+  
