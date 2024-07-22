@@ -1,10 +1,10 @@
-## Scope: 
+## Scope 
 To oversee the management of permitting schemas this governance guidelines are applicable to all the permitting schemas defined for natural resource sector permitting systems including but not limited to housing, core, metadata and permit registry.
 
-## Governance Committee: 
+## Governance Committee 
 The governance committe for the schema management will include representative from all key stakehoders group in this case representative from each permitting system across sectors (data stewards, data owners). They will oversee the development, implementation and maintenance of the schemas and will ensure the alignment with organizational goal and compliance issues.Roles and responsibilities will be defined as follows:
 
-## Key Roles:
+## Key Roles
 •	Schema Owners: Data team will be the schema owner and responsible for the overall schema, including updates and compliance.
 
 •	Contributors: Developers and data owners from specific program areas will act for the contributor role and can contribute for modification or update of the schemas.
@@ -30,7 +30,7 @@ The governance committe for the schema management will include representative fr
 
 •	Documentation: Ensure all schemas are well-documented and provide examples.
 
-## Schema Repository Structure:
+## Schema Repository Structure
 
 •	Root Directory: Contains general information and governance documents.
 
@@ -66,7 +66,7 @@ root/
 
 |-- GOVERNANCE.md
 
-## Lifecycle Management Process:
+## Lifecycle Management Process
 
 Creation and Updates:
 
@@ -78,7 +78,7 @@ Creation and Updates:
 
 •	Merge upon approval.
 
-## Feedback Mechanism:
+## Feedback Mechanism
 Half yearly review will be conducted to capture improvement feedback from users and govennance committe members. Periodic review will ensure the update with new requirements, technologies and best practices. 
 
 
